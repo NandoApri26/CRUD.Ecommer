@@ -1,0 +1,32 @@
+@model Ecommer.Models.Entities.Pembeli
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Pembeli</h1>
+</div>
+<form action="Create" method="post">
+    <div class="mb-3">
+        <label for="Nama" class="form-label">Nama Pembeli</label>
+        <input type="text" class="form-control" id="Nama" asp-for= "Nama" placeholder="Masukkan nama Pembeli">
+    </div>
+    <div class="mb-3">
+        <label for="Alamat" class="form-label">Alamat</label>
+        <input type="text" class="form-control" id="Alamat" asp-for= "Alamat" placeholder="Masukkan alamat">
+    </div>
+    <div class="mb-3">
+        <label for="NoHp" class="form-label">No Handphone </label>
+        <input type="text" class="form-control" id="NoHp" asp-for= "NoHp" placeholder="Masukkan no handphone">
+    </div>
+    <div class="mb-3">
+        <label for="Negara" class="form-label">Negara Pembeli</label>
+        <input type="text" class="form-control" id="Negara" asp-for= "Negara" placeholder="Masukkan Negara Pembeli">
+    </div>
+    @* <div class="mb-3">
+        <label for="ImagePembeli" class="form-label">Select Image</label>
+        <input class="form-control" type="file" id="ImagePembeli">
+    </div> *@
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-outline-primary" asp-controller="Pembeli" asp-action="Index">Back</a>
+</form>

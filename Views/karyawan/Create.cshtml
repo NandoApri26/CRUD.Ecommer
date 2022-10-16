@@ -1,0 +1,29 @@
+@model Ecommer.Models.Entities.Karyawan
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Karyawan</h1>
+</div>
+<form action="Create" method="post">
+    <div class="mb-3">
+    <div class="mb-3">
+        <label for="NamaKaryawan" class="form-label">Nama Karyawan</label>
+        <input type="text" class="form-control" id="NamaKaryawan" asp-for= "NamaKaryawan" placeholder="Masukkan nama karyawan ">
+    </div>
+    <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="Username" asp-for= "Username" placeholder="Masukkan deskripsi">
+    </div>
+    @* <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="Password" asp-for= "Password" placeholder="Masukkan deskripsi">
+    </div> *@
+    <div class="mb-3">
+        <label for="Posisi" class="form-label">Posisi Karyawan</label>
+        <input type="text" class="form-control" id="Posisi" asp-for= "Posisi" placeholder="Masukkan posisi karyawan">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-outline-primary" asp-controller="Karyawan" asp-action="Index">Back</a>
+</form>

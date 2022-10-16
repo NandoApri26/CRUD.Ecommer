@@ -1,0 +1,25 @@
+@model Ecommer.Models.Entities.Karyawan
+@{
+    ViewData["Title"] = "Update Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Update Karyawan</h1>
+</div>
+<form action="Update" method="post">
+    <div class="mb-3">
+        <label for="NamaKaryawan" class="form-label">NamaKaryawan Karyawan</label>
+        <input type="text" class="form-control" id="NamaKaryawan" asp-for= "NamaKaryawan" placeholder="Masukkan nama karyawan ">
+    </div>
+    <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="Username" asp-for= "Username" placeholder="Masukkan username">
+    </div>
+    <div class="mb-3">
+        <label for="Posisi" class="form-label">Posisi Karyawan</label>
+        <input type="text" class="form-control" id="Posisi" asp-for= "Posisi" placeholder="Masukkan Posisi Karyawan">
+    </div>
+    <input type="hidden" asp-for="IdKaryawan">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-outline-primary" asp-controller="Karyawan" asp-action="Index">Back</a>
+</form>

@@ -1,0 +1,49 @@
+@using System.Collections;
+@model List<Ecommer.Models.Entities.Karyawan>
+@* @model IEnumerable<Ecommer.Models.Entities.Karyawan> *@
+
+@{
+    ViewBag.Title = "List Karyawan";
+}
+
+<h2 class="text-center">Data Karyawan</h2>
+
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            @* <th scope="col">No</th> *@
+            <th scope="col">Nama Karyawan</th>
+            <th scope="col" class="text-center">Username</th>
+            @* <th scope="col" class="text-center">Password</th> *@
+            <th scope="col" class="text-center">Posisi</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-light">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                    <tr>
+                        @* <td>@item.IdKaryawan</td> *@
+                        <td>@item.NamaKaryawan</td>
+                        <td>@item.Username</td>
+                        @* <td>@item.Password</td> *@
+                        <td>@item.Posisi</td>
+                        <td class="text-center">
+                            <a class="btn btn-success" asp-route-id="@item.IdKaryawan" asp-controller="Karyawan" asp-action="Update">Update</a>
+                            @* <a class="btn btn-warning" asp-route-id="@item.Id" asp-controller="Karyawan" asp-action="Detail">Detail</a> *@
+                            <a class="btn btn-danger" asp-route-id="@item.IdKaryawan" asp-controller="Karyawan" asp-action="Delete">Delete</a>
+                        </td>
+                    </tr>
+            }
+        }
+        else {
+                <h1>Data Karyawan null</h1>
+        }
+    </tbody>
+</table>
+
+<div class="col">
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Karyawan">Tambah Karyawan</a>
+</div>

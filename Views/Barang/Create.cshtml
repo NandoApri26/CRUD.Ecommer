@@ -1,0 +1,36 @@
+@model Ecommer.Models.Entities.Barang
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create Barang</h1>
+</div>
+<form action="Create" method="post">
+    <div class="mb-3">
+        <label for="Kode" class="form-label">Kode</label>
+        <input type="text" class="form-control" id="Kode" asp-for= "Kode" aria-describedby="emailHelp" placeholder="Masukkan kode">
+    </div>
+    <div class="mb-3">
+        <label for="Nama" class="form-label">Nama Barang</label>
+        <input type="text" class="form-control" id="Nama" asp-for= "Nama" placeholder="Masukkan nama Barang">
+    </div>
+    <div class="mb-3">
+        <label for="Description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="Description" asp-for= "Description" placeholder="Masukkan deskripsi">
+    </div>
+    <div class="mb-3">
+        <label for="Harga" class="form-label">Harga Barang</label>
+        <input type="text" class="form-control" id="Harga" asp-for= "Harga" placeholder="Masukkan harga barang">
+    </div>
+    <div class="mb-3">
+        <label for="Stok" class="form-label">Stok Barang</label>
+        <input type="text" class="form-control" id="Stok" asp-for= "Stok" placeholder="Masukkan stok barang">
+    </div>
+    @* <div class="mb-3">
+        <label for="ImageBarang" class="form-label">Select Image</label>
+        <input class="form-control" type="file" id="ImageBarang">
+    </div> *@
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-outline-primary" asp-controller="Barang" asp-action="Index">Back</a>
+</form>

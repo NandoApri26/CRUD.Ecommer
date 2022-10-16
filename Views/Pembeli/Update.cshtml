@@ -1,0 +1,25 @@
+@model Ecommer.Models.Entities.Pembeli
+@{
+    ViewData["Title"] = "Update Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Update Pembeli</h1>
+</div>
+<form action="Update" method="post">
+    <div class="mb-3">
+        <label for="Alamat" class="form-label">Alamat Pembeli</label>
+        <input type="text" class="form-control" id="Alamat" asp-for= "Alamat" placeholder="Masukkan Alamat">
+    </div>
+    <div class="mb-3">
+        <label for="NoHp" class="form-label">No Handphone</label>
+        <input type="text" class="form-control" id="NoHp" asp-for= "NoHp" placeholder="Masukkan No Handphone">
+    </div>
+    <div class="mb-3">
+        <label for="Negara" class="form-label">Negara</label>
+        <input type="text" class="form-control" id="Negara" asp-for= "Negara" placeholder="Masukkan Negara">
+    </div>
+    <input type="hidden" asp-for="IdPembeli">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class="btn btn-outline-primary" asp-controller="Pembeli" asp-action="Index">Back</a>
+</form>

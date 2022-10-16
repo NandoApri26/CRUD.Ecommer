@@ -1,0 +1,92 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Ecommer
+build_property.RootNamespace = Ecommer
+build_property.ProjectDir = D:\Nando\DIgitalSkill\Ecommer\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Nando\DIgitalSkill\Ecommer
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Barang/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFyYW5nXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Barang/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFyYW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Barang/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFyYW5nXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/karyawan/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Nca2FyeWF3YW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/karyawan/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Nca2FyeWF3YW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/karyawan/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Nca2FyeWF3YW5cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Pembeli/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVtYmVsaVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Pembeli/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVtYmVsaVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Pembeli/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVtYmVsaVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Penjual/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuanVhbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Penjual/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuanVhbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Penjual/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuanVhbFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Nando/DIgitalSkill/Ecommer/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ugkxoqr9hl
