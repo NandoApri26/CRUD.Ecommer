@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Net.Mime;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Ecommer.Models;
 using Ecommer.Models.Entities;
@@ -28,17 +29,34 @@ public class BarangController : Controller
     }
 
     [HttpPost]
-    public IActionResult Create(Barang brg)
+    public IActionResult Create(BarangRequest newBarang)
     {
-        try{
-            brg.IdPenjual=14;
-            _dbContext.Barangs.Add(brg);
-            _dbContext.SaveChanges();
-            return RedirectToAction("Index");
+        var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Image");
+        if(!Directory.Exists(uploadFolder))
+            Directory.CreateDirectory(uploadFolder);
+
+        var Image = $"{newBarang.Kode}{newBarang.Image.FileName}";
+        var filePath = Path.Combine(uploadFolder, Image);
+
+        using var stream = System.IO.File.Create(filePath);
+        if(newBarang.Image != null)
+        {
+            newBarang.Image.CopyTo(stream);
         }
-        catch{
-            return View();
-        }
+        var url = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/images/{Image}";
+        
+        _dbContext.Barangs.Add(new Barang
+        {
+            Kode = newBarang.Kode,
+            Nama = newBarang.Nama,
+            Description = newBarang.Description,
+            Harga = newBarang.Harga,
+            Stok = newBarang.Stok,
+            Image = Image,
+            Url = url
+        });
+        return View();
+
     }
 
     [HttpGet]

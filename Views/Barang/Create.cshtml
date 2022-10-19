@@ -6,7 +6,7 @@
 <div class="text-center">
     <h1 class="display-4">Create Barang</h1>
 </div>
-<form action="Create" method="post">
+<form action="Create" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="Kode" class="form-label">Kode</label>
         <input type="text" class="form-control" id="Kode" asp-for= "Kode" aria-describedby="emailHelp" placeholder="Masukkan kode">
@@ -27,10 +27,10 @@
         <label for="Stok" class="form-label">Stok Barang</label>
         <input type="text" class="form-control" id="Stok" asp-for= "Stok" placeholder="Masukkan stok barang">
     </div>
-    @* <div class="mb-3">
-        <label for="ImageBarang" class="form-label">Select Image</label>
-        <input class="form-control" type="file" id="ImageBarang">
-    </div> *@
+    <div class="mb-3">
+        <label for="Image" class="form-label">Select Image</label>
+        <input class="form-control" type="file" id="Image" name="Image">
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <a class="btn btn-outline-primary" asp-controller="Barang" asp-action="Index">Back</a>
 </form>

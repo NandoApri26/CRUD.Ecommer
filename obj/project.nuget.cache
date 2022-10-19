@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hd3+xUSmX7gwLqMOc1I7Ie0+V/UL3BMtjokM3Iob3KfhVkbfDiCCFYlZaDi/LMV8KkCWmCSucIldVBGY7Fomyw==",
+  "dgSpecHash": "lXjAmBE65rFtZmF7SBENNpRJrs3OKHeNl5OPyejkSZLvo/qohaMZe9BRV7Z51JtKvPicDgGHqa2FweoMOmAckg==",
   "success": true,
   "projectFilePath": "D:\\Nando\\DIgitalSkill\\Ecommer\\Ecommer.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.10\\microsoft.entityframeworkcore.analyzers.6.0.10.nupkg.sha512",
     "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.10\\microsoft.entityframeworkcore.design.6.0.10.nupkg.sha512",
     "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.10\\microsoft.entityframeworkcore.relational.6.0.10.nupkg.sha512",
+    "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.10\\microsoft.entityframeworkcore.tools.6.0.10.nupkg.sha512",
     "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\Nando Apri\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

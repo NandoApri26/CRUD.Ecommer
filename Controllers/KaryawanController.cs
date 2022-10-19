@@ -31,7 +31,6 @@ public class KaryawanController : Controller
     public IActionResult Create(Karyawan kry)
     {
         try {
-            kry.IdKaryawan=1;
             _dbContext.Karyawans.Add(kry);
             _dbContext.SaveChanges();
             return RedirectToAction("Index");

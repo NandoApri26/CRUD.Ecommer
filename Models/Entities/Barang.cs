@@ -14,6 +14,9 @@ public class Barang {
     public string? Description {get; set;}
     public decimal Harga {get; set;}
     public int Stok { get; set; }
+    public string? Image{get; set;}
+    public string? Url{get; set;}
+
     [ForeignKey("Penjual")]
     public int IdPenjual { get; set;}
 

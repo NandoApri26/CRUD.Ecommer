@@ -27,6 +27,10 @@
         <label for="Stok" class="form-label">Stok Barang</label>
         <input type="text" class="form-control" id="Stok" asp-for= "Stok" placeholder="Masukkan stok barang">
     </div>
+    <div class="mb-3">
+        <label for="Image" class="form-label">Select Image</label>
+        <input class="form-control" type="file" id="Image">
+    </div>
     <input type="hidden" asp-for="Id">
     <button type="submit" class="btn btn-primary">Submit</button>
     <a class="btn btn-outline-primary" asp-controller="Barang" asp-action="Index">Back</a>
