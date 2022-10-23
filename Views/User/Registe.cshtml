@@ -1,0 +1,18 @@
+@model Ecommer.Models.RegisterRequest;
+<form action="Register" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="Username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="Username"  name="Username" placeholder="Insert your username">
+  </div>
+  <div class="mb-3">
+    <label for="Password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="Password" name="Password" placeholder="Please insert your password">
+  </div>
+  <div class="mb-3">
+    <label for="Tipe" class="form-label">Tipe</label>
+    <select name="Time" id="Tipe" value="Admin">Admin</select>
+    <select name="Time" id="Tipe" value="Penjual">Penjual</select>
+    <select name="Time" id="Tipe" value="Pembeli">Pembeli</select>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -66,7 +66,7 @@ public class KaryawanController : Controller
     [HttpGet]
     public ActionResult Delete(int Id)
     {
-        Karyawan kry = _dbContext.Karyawans.Find(Id);
+        Karyawan kry = _dbContext.Karyawans.Find(Id)!;
         _dbContext.Karyawans.Remove(kry);
         _dbContext.SaveChanges();
         return RedirectToAction("Index");

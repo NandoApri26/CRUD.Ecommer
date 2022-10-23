@@ -1,8 +1,56 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿    @using System.Collections;
+    @model List<Ecommer.Models.Entities.Barang>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    @{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <!-- product section -->
+    <section class="product_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                Lorem
+                </h2>
+                <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dicta, illo voluptatem accusantium vitae eos laborum est omnis quasi. Eos consequatur ea iure vero! Saepe nostrum hic eius minima expedita!
+                </p>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="box">
+                            <div class="img-box mt-5">
+                                <img src=@item.Url alt="" style="width: 100%; height:350px; object-fit:cover;">
+                            </div>
+                            <div class="detail-box">
+                                <span class="rating">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                </span>
+                                <div class="text-center">
+                                    <a href="">
+                                    @item.Nama
+                                </a>
+                                </div>
+                                <div class="price_box text-center">
+                                    <h6 class="price_heading">
+                                    <span>Rp</span> @item.Harga
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="btn-box mt-3 text-center">
+                                <a href="">
+                                View All
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Ecommer.Models;
 
@@ -7,6 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("Db_Market"))
 );
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+        options.SlidingExpiration = true;
+        options.LoginPath = "/User/Login";
+        options.LogoutPath = "/User/Logout";
+        options.AccessDeniedPath = "/Home/Forbidden";
+    });
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -24,6 +36,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

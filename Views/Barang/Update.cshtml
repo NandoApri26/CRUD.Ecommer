@@ -6,7 +6,7 @@
 <div class="text-center">
     <h1 class="display-4">Update Barang</h1>
 </div>
-<form action="Update" method="post">
+<form action="Update" method="post" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="Kode" class="form-label">Kode</label>
         <input type="text" class="form-control" id="Kode" asp-for= "Kode" aria-describedby="emailHelp" placeholder="Masukkan kode">
@@ -29,7 +29,7 @@
     </div>
     <div class="mb-3">
         <label for="Image" class="form-label">Select Image</label>
-        <input class="form-control" type="file" id="Image">
+        <input class="form-control" type="file" id="Image" name="Image">
     </div>
     <input type="hidden" asp-for="Id">
     <button type="submit" class="btn btn-primary">Submit</button>

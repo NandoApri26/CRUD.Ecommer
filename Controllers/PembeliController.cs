@@ -69,7 +69,7 @@ public class PembeliController : Controller
     [HttpGet]
     public ActionResult Delete(int id)
     {
-        Pembeli pem = _dbContext.Pembelis.Find(id);
+        Pembeli pem = _dbContext.Pembelis.Find(id)!;
         _dbContext.Pembelis.Remove(pem);
         _dbContext.SaveChanges();
         return RedirectToAction("Index");

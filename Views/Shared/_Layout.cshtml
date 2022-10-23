@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Authentication.Cookies
+@using Microsoft.AspNetCore.Mvc.RazorPages
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,17 +24,26 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.IsInRole("Penjual"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Barang" asp-action="Index">Barang</a>
+                            </li>
+                        }
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Penjual" asp-action="Index">Penjual</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Pembeli" asp-action="Index">Pembeli</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Karyawan" asp-action="Index">Karyawan</a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Barang" asp-action="Index">Barang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Penjual" asp-action="Index">Penjual</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pembeli" asp-action="Index">Pembeli</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Karyawan" asp-action="Index">Karyawan</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Login">Login</a>
                         </li>
                     </ul>
                 </div>

@@ -65,7 +65,7 @@ public class PenjualController : Controller
     [HttpGet]
     public ActionResult Delete(int id)
     {
-        Penjual pen = _dbContext.Penjuals.Find(id);
+        Penjual pen = _dbContext.Penjuals.Find(id)!;
         _dbContext.Penjuals.Remove(pen);
         _dbContext.SaveChanges();
         return RedirectToAction("Index");

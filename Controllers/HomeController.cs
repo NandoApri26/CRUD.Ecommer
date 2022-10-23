@@ -1,21 +1,25 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Ecommer.Models;
+using Ecommer.Models.Entities;
 
-namespace Ecommer.Controllers;
+namespace Home.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _MarketContext;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext dbContext)
     {
+        _MarketContext = dbContext;
         _logger = logger;
     }
 
     public IActionResult Index()
     {
-        return View();
+        List<Barang> barangs = _MarketContext.Barangs.ToList();
+        return View(barangs);
     }
 
     public IActionResult Privacy()

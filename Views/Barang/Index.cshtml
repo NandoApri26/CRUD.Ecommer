@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody class="table-light">
-        @if (Model != null) 
+        @if (Model != null)
         {
             foreach (var item in Model)
             {
@@ -33,7 +33,9 @@
                         <td>@item.Description</td>
                         <td>@item.Harga</td>
                         <td class="text-center">@item.Stok</td>
-                        <td>@item.Image</td>
+                        <td class="text-center">
+                            <img src=@item.Url alt="" width="150">
+                        </td>
                         <td class="text-center">
                             <a class="btn btn-success" asp-route-id="@item.Id" asp-controller="Barang" asp-action="Update">Update</a>
                             @* <a class="btn btn-warning" asp-route-id="@item.Id" asp-controller="Barang" asp-action="Detail">Detail</a> *@

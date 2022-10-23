@@ -1,4 +1,5 @@
-﻿using System.Net.Mime;
+﻿using System;
+using System.Net.Mime;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Ecommer.Models;
@@ -23,39 +24,44 @@ public class BarangController : Controller
         return View(barangs);
     }
 
+
     public IActionResult Create()
     {
         return View();
     }
 
     [HttpPost]
-    public IActionResult Create(BarangRequest newBarang)
+    public IActionResult Create(BarangRequest brg)
     {
         var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Image");
         if(!Directory.Exists(uploadFolder))
             Directory.CreateDirectory(uploadFolder);
 
-        var Image = $"{newBarang.Kode}{newBarang.Image.FileName}";
+        var Image = $"{brg.Kode}{brg.Image!.FileName}";
         var filePath = Path.Combine(uploadFolder, Image);
 
         using var stream = System.IO.File.Create(filePath);
-        if(newBarang.Image != null)
+        if(brg.Image != null)
         {
-            newBarang.Image.CopyTo(stream);
+            brg.Image.CopyTo(stream);
         }
-        var url = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/images/{Image}";
-        
-        _dbContext.Barangs.Add(new Barang
+        var url = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/Image/{Image}";
+
+        Barang input = new Barang
         {
-            Kode = newBarang.Kode,
-            Nama = newBarang.Nama,
-            Description = newBarang.Description,
-            Harga = newBarang.Harga,
-            Stok = newBarang.Stok,
+            IdPenjual = 14,
+            Kode = brg.Kode,
+            Nama = brg.Nama,
+            Description = brg.Description,
+            Harga = brg.Harga,
+            Stok = brg.Stok,
             Image = Image,
             Url = url
-        });
-        return View();
+        };
+        _dbContext.Barangs.Add(input);
+        _dbContext.SaveChanges();
+        List<Barang> data = _dbContext.Barangs.ToList();
+        return View("Index", data);
 
     }
 
@@ -66,42 +72,44 @@ public class BarangController : Controller
         return View(brg);
     }
 
+
     [HttpPost]
-    public IActionResult Update(Barang brg)
+    public IActionResult Update(BarangRequest brg)
     {
-        try {
+        var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Image");
+        var Image = $"{brg.Kode}{brg.Image.FileName}";
+        var filePath = Path.Combine(uploadFolder, Image);
+        using var stream = System.IO.File.Create(filePath);
+        if(brg.Image != null)
+        {
+            brg.Image.CopyTo(stream);
+        }
+        var url = $"{Request.Scheme}://{Request.Host}{Request.PathBase}/Image/{Image}";
             Barang updated = _dbContext.Barangs.First(x => x.Id == brg.Id);
+            var DeletedfilePath = Path.Combine(uploadFolder,updated.Image!);
+            System.IO.File.Delete(DeletedfilePath);
+            // updated.Id = brg.Id;
             updated.Kode = brg.Kode;
             updated.Nama = brg.Nama;
             updated.Description = brg.Description;
             updated.Harga = brg.Harga;
             updated.Stok = brg.Stok;
+            updated.Image = Image;
+            updated.Url = url;
             _dbContext.SaveChanges();
             return RedirectToAction("Index");
-        }
-        catch
-        {
-            return View();
-        }
     }
 
     [HttpGet]
-    public ActionResult Delete(int id)
-    {
-        Barang brg = _dbContext.Barangs.Find(id);
+    public IActionResult Delete(int id) {
+        Barang brg = _dbContext.Barangs.First(x => x.Id == id);
+        var uploadFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Image");
+        var filePath = Path.Combine(uploadFolder,brg.Image!);
+        System.IO.File.Delete(filePath);
+
         _dbContext.Barangs.Remove(brg);
         _dbContext.SaveChanges();
-        return RedirectToAction("Index");
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        List<Barang> barangs = _dbContext.Barangs.ToList();
+        return View("Index", barangs);
     }
 }
